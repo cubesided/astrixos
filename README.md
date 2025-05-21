@@ -1,4 +1,5 @@
 # _Astrix OS_
+###### still being worked on, no installer yet :P
 Here holds the operating system for, the **cubesided** Astrix<br>
 
 ------------------------------------------------------------------------------
