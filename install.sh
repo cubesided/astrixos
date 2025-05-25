@@ -47,10 +47,10 @@ if [ "$EUID" -ne 0 ]
     tar -xvf conf.tar.gz
     cd cn
     #sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
-    echo "usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
-    sudo cp -r ./rofi ~/.config/rofi
-    sudo cp -r ./waybar /etc/xdg/waybar
-    sudo cp -r ./sway /etc/sway
+    echo " usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
+    sudo cp -r ./rofi ~/.config/
+    sudo cp -r ./waybar /etc/xdg/
+    sudo cp -r ./sway /etc/
     cd ..
     sleep 2
     clear
@@ -62,7 +62,7 @@ if [ "$EUID" -ne 0 ]
     echo Waiting 10 sec.
     sleep 10
     # Remove install cache
-    sudo rm -r ./cn
-    sudo rm -r ./conf.tar.gz
+    cd ..
+    sudo rm -r ./instcache
     sudo reboot
 fi
