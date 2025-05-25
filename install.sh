@@ -13,6 +13,7 @@ echo cubesided OSr1 Installation Script
 echo "Installation might take 15-20 minutes"
 echo "(cubesided Astrix® 3600, cubesided OSr1 wrap.1 25525)"
 echo ----------------------------------------------------------------------
+sleep 5
 # hope this works :D
 if [ "$EUID" -ne 0 ]
       then 
