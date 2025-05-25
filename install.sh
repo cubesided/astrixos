@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-# SCRIPT TO BE USED FOR PROTOTYPING!!!!
 export OSVER="OSr1" # Revision Name / OS Name
 export bnm=1 # Version Number
 export dmy=25525 # Build date
