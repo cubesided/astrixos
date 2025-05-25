@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # SCRIPT TO BE USED FOR PROTOTYPING!!!!
-export OSVER = "OSr1" # Revision Name / OS Name
-export $bnm = 1 # Version Number
-export $dmy = 25525 # Build date
-export OSBB = "$OSVER wrap.$bnm $dmy"
+OSVER = "OSr1" # Revision Name / OS Name
+bnm = 1 # Version Number
+dmy = 25525 # Build date
+OSBB = "$OSVER wrap.$bnm $dmy"
 
 echo cubesided OSr1 Installation Script
 echo ($OSBB)
