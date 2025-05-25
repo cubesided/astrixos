@@ -59,11 +59,8 @@ if [ "$EUID" -ne 0 ]
     sudo apt-get install ./backman.deb
     cd ..
     sleep 2
-    clear
-    echo Your device will now restart.
-    echo If you are running on a Raspberry Pi, there might be some gui issues
-    echo use raspi-config at boot to fix any errors found.
     echo -----------------------------------------------------------------------------
+    echo Your device will now restart.
     echo Any configuration errors should be reported to the $OSVER Repo.
     echo Waiting 10 sec.
     sleep 10
