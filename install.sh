@@ -45,7 +45,8 @@ if [ "$EUID" -ne 0 ]
     wget https://github.com/cubesided/astrixos/releases/download/25525/r1conf-deb12.tar.gz -O conf.tar.gz
     tar -xvf conf.tar.gz
     cd cn
-    sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
+    #sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
+    echo "usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
     sudo cp -r ./rofi ~/.config/rofi
     sudo cp -r ./waybar /etc/xdg/waybar
     sudo cp -r ./sway /etc/sway
