@@ -43,4 +43,4 @@ if [ "$EUID" -ne 0 ]
     echo Waiting 10 sec.
     sleep 10
     sudo reboot
-fi;;
+fi
