@@ -47,7 +47,7 @@ if [ "$EUID" -ne 0 ]
     tar -xvf conf.tar.gz
     cd cn
     #sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
-    echo " usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
+    sudo echo " usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
     cp -r ./rofi ~/.config/
     sudo cp -r ./waybar /etc/xdg/
     sudo cp -r ./sway /etc/
