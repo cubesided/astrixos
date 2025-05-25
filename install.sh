@@ -1,16 +1,17 @@
 #!/bin/bash
 
+
 # SCRIPT TO BE USED FOR PROTOTYPING!!!!
 # OSVER = "OSr1" # Revision Name / OS Name
 # bnm = 1 # Version Number
 # dmy = 25525 # Build date
 # OSBB = "$OSVER wrap.$bnm $dmy"
 
+mkdir instcache
 clear
 echo cubesided OSr1 Installation Script
 echo (cubesided Astrix® 3600, cubesided OSr1 wrap.1 25525)
 echo ----------------------------------------------------------------------
-
 # hope this works :D
 if [ "$EUID" -ne 0 ]
       then 
@@ -31,16 +32,23 @@ if [ "$EUID" -ne 0 ]
     sudo apt --assume-yes -qq install sway xorg xwayland gnome-terminal nemo
     sudo apt --assume-yes -qq install waybar rofi git autofs x2gothinclient-usbmount subversion
     sudo apt --assume-yes -qq install gdm3 --no-install-recommends # NO GNOME PLS
-    #sudo apt --assume-yes purge foot
+    sudo apt --assume-yes purge foot
     sudo systemctl enable gdm3
+    sudo systemctl set-default graphical.target
     sleep 2
     clear
     echo configuring your experience, please wait.....
     echo
-    curl
-
-    
-    sudo systemctl set-default graphical.target
+    cd instcache
+    wget https://github.com/cubesided/astrixos/releases/download/25525/r1conf-deb12.tar.gz -O conf.tar.gz
+    tar -xvf conf.tar.gz
+    cd cn
+    sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
+    sudo cp -r ./rofi ~/.config/rofi
+    sudo cp -r ./waybar /etc/xdg/waybar
+    sudo cp -r ./sway /etc/sway
+    cd ..
+    sleep 2
     echo Your device will now restart.
     echo If you are running on a Raspberry Pi, there might be some gui issues
     echo use raspi-config at boot to fix any errors found.
@@ -48,5 +56,8 @@ if [ "$EUID" -ne 0 ]
     echo Any configuration errors should be reported to the OSr1 Repo.
     echo Waiting 10 sec.
     sleep 10
+    # Remove install cache
+    sudo rm -r ./cn
+    sudo rm -r ./conf.tar.gz
     sudo reboot
 fi
