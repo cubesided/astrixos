@@ -28,8 +28,9 @@ if [ "$EUID" -ne 0 ]
     else
     clear
     echo installing packages, please wait.....
-    sudo apt -qq install sway xorg xwayland
-    sudo apt -qq install waybar rofi git backman gdm3
+    sudo apt -qq install sway xorg xwayland gnome-terminal
+    sudo apt -qq install waybar rofi git gdm3
+    sudo apt purge foot
     sudo systemctl enable gdm3
     clear
     sudo systemctl set-default graphical.target
