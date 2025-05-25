@@ -48,7 +48,7 @@ if [ "$EUID" -ne 0 ]
     cd cn
     #sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
     sudo echo " usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
-    cp -r ./rofi ~/.config/
+    cp -r ./rofi $(eval echo ~"$SUDO_USER")/.config/rofi
     sudo cp -r ./waybar /etc/xdg/
     sudo cp -r ./sway /etc/
     cd ..
