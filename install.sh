@@ -1,7 +1,16 @@
 #!/bin/bash
 
-export OSVER = "OSr1"
+# SCRIPT TO BE USED FOR PROTOTYPING!!!!
+export OSVER = "OSr1" # Revision Name / OS Name
+export $bnm = 1 # Version Number
+export $dmy = 25525 # Build date
+export OSBB = "$OSVER wrap.$bnm $dmy"
 
+echo cubesided OSr1 Installation Script
+echo ($OSBB)
+echo ----------------------------------------------
+
+# hope this works :D
 if [ "$EUID" -ne 0 ]
       then 
             echo "To install $OSVER, sudo is needed."
@@ -19,16 +28,19 @@ if [ "$EUID" -ne 0 ]
     else
     clear
     echo installing packages, please wait.....
-    sudo apt -qq install swaywm
-    sudo apt -qq install polybar
-    sudo apt -qq install nitrogen
-    nitrogen /usr/share/backgrounds
+    sudo apt -qq install swaywm xorg-server xwayland
+    sudo apt -qq install waybar
+    sudo apt -qq install git
+    sudo apt -qq install backman
+    sudo apt -qq install gdm
     clear
+    sudo systemctl set-default graphical.target
     echo Your device will now restart.
     echo If you are running on a Raspberry Pi, there might be some gui issues
     echo use raspi-config at boot to fix any errors found.
     echo -----------------------------------------------------------------------------
-    echo Any configuration errors should be reported to cubesided admin.
-    sleep 5
+    echo Any configuration errors should be reported to the OSr1 Repo.
+    echo Waiting 10 sec.
+    sleep 10
     sudo reboot
 fi;;
