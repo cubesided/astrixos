@@ -51,6 +51,7 @@ if [ "$EUID" -ne 0 ]
     sudo cp -r ./sway /etc/sway
     cd ..
     sleep 2
+    clear
     echo Your device will now restart.
     echo If you are running on a Raspberry Pi, there might be some gui issues
     echo use raspi-config at boot to fix any errors found.
