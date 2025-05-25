@@ -1,6 +1,7 @@
 # _Astrix OS_
 ###### Latest: OSr1 wrap.1 25525
-Here holds the operating system for, the **cubesided** Astrix<br>
+Here holds the operating system for, the **cubesided** Astrix<br><br>
+Astrix OS is based on swaywm (Wayland) and includes <br>multiple packages pushed together to make one.
 
 ## Installation
 OSr1 is to be installed ontop of Raspberry Pi OS Lite for RPI5<br>
@@ -15,11 +16,10 @@ OSr* wrap.* (DATE ddmyy) (with the asterisk being a placeholder)<br>
 eg. cubesided OSr3 wrap.2 29727<br>
 
 > [!NOTE]  
-> Even though its labeled as Astrix OS, **DO NOT** put Astrix infront of the OSr*.
+> Even though it is labeled as Astrix OS, **DO NOT** put Astrix infront of the OSr*.
 
 ## List of branches follows:<br>
 main (OSr1 and bug fixes)<br>
-bgf (bug fixes)<br>
 dev (stuff i might want to add or coming soon)<br>
 
 ###### © cubesided 2025
