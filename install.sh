@@ -1,25 +1,25 @@
 #!/bin/bash
 
 # SCRIPT TO BE USED FOR PROTOTYPING!!!!
-OSVER = "OSr1" # Revision Name / OS Name
-bnm = 1 # Version Number
-dmy = 25525 # Build date
-OSBB = "$OSVER wrap.$bnm $dmy"
+# OSVER = "OSr1" # Revision Name / OS Name
+# bnm = 1 # Version Number
+# dmy = 25525 # Build date
+# OSBB = "$OSVER wrap.$bnm $dmy"
 
 echo cubesided OSr1 Installation Script
-echo ($OSBB)
+# echo ($OSBB)
 echo ----------------------------------------------
 
 # hope this works :D
 if [ "$EUID" -ne 0 ]
       then 
-            echo "To install $OSVER, sudo is needed."
+            echo "To install OSr1, sudo is needed."
             echo "Error, please insert your password:"
             sudo ls /root
             if [ "$EUID" -ne 0 ]
                 then
                     echo -e "\nCould not authenticate the user."
-                    echo -e "$OSVER installation will now quit."
+                    echo -e "installation will now quit."
                     exit    
             else
             echo thank you.
