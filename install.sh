@@ -10,6 +10,7 @@
 mkdir instcache
 clear
 echo cubesided OSr1 Installation Script
+echo "Installation might take 15-20 minutes"
 echo "(cubesided Astrix® 3600, cubesided OSr1 wrap.1 25525)"
 echo ----------------------------------------------------------------------
 # hope this works :D
