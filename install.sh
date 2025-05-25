@@ -14,7 +14,7 @@ echo ----------------------------------------------
 if [ "$EUID" -ne 0 ]
       then 
             echo "To install OSr1, sudo is needed."
-            echo "Error, please insert your password:"
+            # echo "Error, please insert your password:"
             sudo ls /root
             if [ "$EUID" -ne 0 ]
                 then
@@ -28,11 +28,12 @@ if [ "$EUID" -ne 0 ]
     else
     clear
     echo installing packages, please wait.....
-    sudo apt -qq install swaywm xorg-server xwayland
+    sudo apt -qq install sway xorg xwayland
     sudo apt -qq install waybar
     sudo apt -qq install git
     sudo apt -qq install backman
-    sudo apt -qq install gdm
+    sudo apt -qq install gdm3
+    sudo systemctl enable gdm3
     clear
     sudo systemctl set-default graphical.target
     echo Your device will now restart.
