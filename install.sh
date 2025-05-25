@@ -30,6 +30,7 @@ if [ "$EUID" -ne 0 ]
             wait 2
             fi
     else
+    sudo apt update
     echo installing packages, please wait.....
     sudo apt --assume-yes -qq install sway xorg xwayland gnome-terminal nemo
     sudo apt --assume-yes -qq install waybar rofi git autofs x2gothinclient-usbmount subversion
