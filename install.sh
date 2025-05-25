@@ -6,9 +6,10 @@
 # dmy = 25525 # Build date
 # OSBB = "$OSVER wrap.$bnm $dmy"
 
+clear
 echo cubesided OSr1 Installation Script
-# echo ($OSBB)
-echo ----------------------------------------------
+echo (cubesided Astrix® 3600, cubesided OSr1 wrap.1 25525)
+echo ----------------------------------------------------------------------
 
 # hope this works :D
 if [ "$EUID" -ne 0 ]
@@ -28,11 +29,17 @@ if [ "$EUID" -ne 0 ]
     else
     echo installing packages, please wait.....
     sudo apt --assume-yes -qq install sway xorg xwayland gnome-terminal nemo
-    sudo apt --assume-yes -qq install waybar rofi git autofs x2gothinclient-usbmount
+    sudo apt --assume-yes -qq install waybar rofi git autofs x2gothinclient-usbmount subversion
     sudo apt --assume-yes -qq install gdm3 --no-install-recommends # NO GNOME PLS
     #sudo apt --assume-yes purge foot
     sudo systemctl enable gdm3
+    sleep 2
     clear
+    echo configuring your experience, please wait.....
+    echo
+    curl
+
+    
     sudo systemctl set-default graphical.target
     echo Your device will now restart.
     echo If you are running on a Raspberry Pi, there might be some gui issues
