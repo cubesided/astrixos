@@ -54,7 +54,7 @@ if [ "$EUID" -ne 0 ]
     sudo mkdir /usr/share/backgrounds/cubesided
     wget https://github.com/imhemish/backman/releases/download/0.4/backman-git_0.4.6.g976fe21-1_all.deb -O backman.deb
     wget https://raw.githubusercontent.com/cubesided/astrixos/refs/heads/main/config/bg/Forster.png -O /usr/share/backgrounds/cubesided/Forster.png
-    sudo apt-get install ./backman.deb
+    sudo apt-get --assume-yes install ./backman.deb
     cd ..
     sleep 2
     echo -----------------------------------------------------------------------------
