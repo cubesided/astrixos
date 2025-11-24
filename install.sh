@@ -1,15 +1,15 @@
 #!/bin/bash
 
-export OSVER="OSr1" # Revision Name / OS Name
+export OSVER="Lazarus" # Revision Name / OS Name
 export bnm=1 # Version Number
-export dmy=25525 # Build date
+export dmy=241125 # Build date
 export OSBB="$OSVER wrap.$bnm $dmy"
 
 mkdir instcache
 clear
-echo cubesided OSr1 Installation Script
+echo Lazarus Installation Script
 echo "Installation might take 15-20 minutes"
-echo "(cubesided Astrix® 3600, cubesided $OSBB)"
+echo "(cubesided $OSBB)"
 echo ----------------------------------------------------------------------
 sleep 5
 # hope this works :D
@@ -30,9 +30,9 @@ if [ "$EUID" -ne 0 ]
     else
     sudo apt update
     echo installing packages, please wait.....
-    sudo apt --assume-yes -qq install sway xorg xwayland gnome-terminal nemo pavucontrol
-    sudo apt --assume-yes -qq install waybar rofi git autofs x2gothinclient-usbmount fonts-font-awesome
-    sudo apt --assume-yes -qq install gdm3 --no-install-recommends # NO GNOME PLS
+    sudo apt --assume-yes install sway xorg xwayland gnome-terminal nemo pavucontrol
+    sudo apt --assume-yes install waybar rofi git autofs x2gothinclient-usbmount fonts-font-awesome
+    sudo apt --assume-yes install gdm3 --no-install-recommends # NO GNOME PLS
     sudo apt --assume-yes purge foot
     sudo systemctl enable gdm3
     sudo systemctl set-default graphical.target
@@ -46,14 +46,14 @@ if [ "$EUID" -ne 0 ]
     cd cn
     #sudo cp ./cmdline.txt /boot/firmware/cmdline.txt
     sudo echo " usbhid.mousepoll=0" >> /boot/firmware/cmdline.txt
-    cp -r ./rofi $(eval echo ~"$SUDO_USER")/.config/rofi
+    cp -r ./rofi ~/.config/rofi
     sudo cp -r ./waybar /etc/xdg/
     sudo cp -r ./sway /etc/
     
     # Install BACKMAN
     sudo mkdir /usr/share/backgrounds/cubesided
     wget https://github.com/imhemish/backman/releases/download/0.4/backman-git_0.4.6.g976fe21-1_all.deb -O backman.deb
-    wget https://raw.githubusercontent.com/cubesided/astrixos/refs/heads/main/config/bg/Forster.png -O /usr/share/backgrounds/cubesided/Forster.png
+    sudo wget https://raw.githubusercontent.com/cubesided/astrixos/refs/heads/main/config/bg/Forster.png -O /usr/share/backgrounds/cubesided/Forster.png
     sudo apt-get --assume-yes install ./backman.deb
     cd ..
     sleep 2
