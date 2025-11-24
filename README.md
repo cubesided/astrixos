@@ -1,5 +1,5 @@
 # _Astrix OS_
-###### Latest: OSr1 wrap.1 25525
+###### Latest: OSr1 wrap.1 241125
 Here holds the operating system for, the **cubesided** Astrix<br><br>
 Astrix OS is based on swaywm (Wayland) and includes <br>multiple packages pushed together to make one.
 
