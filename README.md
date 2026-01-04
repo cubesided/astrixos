@@ -1,3 +1,5 @@
+Deprecated as of 4/1/26
+-
 # _Astrix OS_
 ###### Latest: OSr1 wrap.1 241125
 Here holds the operating system for, the **cubesided** Astrix<br><br>
